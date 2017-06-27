@@ -7,16 +7,14 @@ import App from './App.vue'
 import ProductsList from './components/ProductstList';
 import ProductDetails from './components/ProductDetails';
 import ProductForm from './components/ProductForm';
+import asCurrency from './filters/asCurrency';
 
 Vue.config.productionTip = false
 
 Vue.use(Vuelidate);
 Vue.use(VueRouter);
 
-Vue.filter(
-  "asCurrency",
-  (price) => '$' + (+price).toFixed(2)
-);
+Vue.filter("asCurrency", asCurrency);
 
 Vue.directive(
   "style-when-broken", function (el) {
